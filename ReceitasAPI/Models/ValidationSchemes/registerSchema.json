@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/RegisterSchema",
+  "definitions": {
+    "RegisterSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 3
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "minLength": 10
+        },
+        "emailtwo": {
+          "type": "string",
+          "format": "email",
+          "minLength": 10
+        },
+        "password": {
+          "type": "string",
+          "minLength": 1
+        },
+        "passwordtwo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "birtdaydate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "birtdaydate",
+        "email",
+        "emailtwo",
+        "name",
+        "password",
+        "passwordtwo"
+      ],
+      "title": "RegisterSchema"
+    }
+  }
+}

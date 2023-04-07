@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/RecipeSchema",
+  "definitions": {
+    "RecipeSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "portions": {
+          "type": "integer"
+        },
+        "time": {
+          "type": "string"
+        },
+        "stepByStep": {
+          "type": "string"
+        },
+        "ingredients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Ingredient"
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pictures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "ingredients",
+        "name",
+        "portions",
+        "stepByStep",
+        "tags",
+        "time"
+      ],
+      "title": "RecipeSchema"
+    },
+    "Ingredient": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer"
+        },
+        "unitMesure": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "quantity",
+        "unitMesure"
+      ],
+      "title": "Ingredient"
+    }
+  }
+}
