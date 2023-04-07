@@ -65,7 +65,7 @@ namespace ReitasAPI.Controllers
 
                 //Validacao dos campos contra um jsonSchema
                 JObject userJObject = JObject.Parse(userLoginData); 
-                JSchema registerSchema = JSchema.Parse(System.IO.File.ReadAllText("./ReitasAPI/Models/ValidationSchemes/registerSchema.json"));
+                JSchema registerSchema = JSchema.Parse(System.IO.File.ReadAllText("./Models/ValidationSchemes/registerSchema.json"));
 
                 IList<string> validationError = new List<string>();
                 if (userJObject.IsValid(registerSchema, out validationError))

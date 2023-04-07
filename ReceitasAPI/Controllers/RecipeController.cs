@@ -34,7 +34,7 @@ namespace ReitasAPI.Controllers
                 {
                     string recipeString = recipe.ToString();
                     int userId = int.Parse(User.FindFirstValue("Id"));
-                    JSchema recipeSchema = JSchema.Parse(System.IO.File.ReadAllText("./ReitasAPI/Models/ValidationSchemes/recipeSchema.json"));
+                    JSchema recipeSchema = JSchema.Parse(System.IO.File.ReadAllText("./Models/ValidationSchemes/recipeSchema.json"));
                     JObject recipeJObject = JObject.Parse(recipeString);
                     IList<string> validationErrors = new List<string>();
                     if (recipeJObject.IsValid(recipeSchema, out validationErrors))
